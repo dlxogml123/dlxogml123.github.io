@@ -1,90 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio&Checkbox</title>
-</head>
-<body>
-  <form action="/signup"><!--button을 사용하면 action에 있는 url으로 양식 제출-->
-    <fieldset>
-      <legend>좋아하는 색상을 모두 선택해주세요.</legend>
-      <ul>
-        <li>
-          <label for="red">빨강</label>
-          <input type="checkbox" id="red" value="red">
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <label for="red">주황</label>
-          <input type="checkbox" id="orange" value="orange">
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <label for="red">노랑</label>
-          <input type="checkbox" id="yellow" value="yellow">
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <label for="red">초록</label>
-          <input type="checkbox" id="green" value="green">
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <label for="red">파랑</label>
-          <input type="checkbox" id="blue" value="blue">
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset>
-      <legend>배송방법은??</legend>
-      <ul>
-        <li>
-          <label for="free">무료</label>
-          <input type="radio" name="delivery" id="free" value="free">
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <label for="free">유료</label>
-          <input type="radio" name="delivery" id="pay" value="pay">
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset>
-      <legend>자기소개서</legend>
-      <textarea name="" id="" cols="15" rows="5">저는 김현우 입니다</textarea>
-    </fieldset>
-    <fieldset>
-      <legend>주문 상품을 선택해주세요</legend>
-      <ul>
-        <li>
-          <select name="goods" id="goods" multiple>
-            <option value="apple_20kg" selected>사과20kg</option>
-            <option value="apple_30kg">사과30kg</option>
-            <option value="apple_40kg">사과40kg</option>
-            <option value="apple_10kg">사과10kg</option>
-            <option value="apple_50kg">사과50kg</option>
-          </select>
-        </li>
-          <label for="ice-cream-choice">맛을 선택하세요</label>
-          <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-<datalist id="ice-cream-flavors">
-  <option value="Chocolate">
-  <option value="Coconut">
-  <option value="Mint">
-  <option value="Strawberry">
-  <option value="Vanilla">
-</datalist>
-      </ul>
-    </fieldset>
-    <button type="submit">제출하기</button>
-    <button type="reset">리셋하기</button>
-    <button type="button" onclick="alert('hello world~!')">버튼</button>
-  </form>
-</body>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Beta-style.css" />
+    <title>KW Cloud</title>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <input type="checkbox" , id="menu-button" />
+        <label for="menu-button">
+          <span></span><span></span><span></span>
+        </label>
+        <div class="On-sidebar"></div>
+      </div>
+    </nav>
+    <div class="Main">
+      <div class="container">
+        <span></span><span></span><span></span><span></span>
+        <h1 data-shadow="KCLOUD">KCLOUD</h1>
+      </div>
+    </div>
+    <!-- <div style="height: 1000px"></div> -->
+  </body>
 </html>
