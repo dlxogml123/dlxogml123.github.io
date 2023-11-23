@@ -11,13 +11,9 @@ body {
 }
 div.Main {
   display: flex;
-  width: 100%;
-  height: 100%;
-  /* background-color: #85200c; */
 }
 div.container {
-  display: flexbox;
-  height: 100%;
+  top: 150px;
 }
 nav {
   position: relative;
@@ -25,7 +21,9 @@ nav {
   /* height: 100vh; */
   /* background-color: red; */
 }
-/* Side Menu */
+
+/* 사이드 네비게이션 메뉴 버튼 */
+
 div.On-sidebar {
   height: 100%;
   position: fixed;
@@ -36,6 +34,7 @@ div.On-sidebar {
   /* border: 1px solid #6d1807; */
   z-index: 30;
   transition: 0.35s;
+  text-align: center;
 }
 input#menu-button {
   display: none;
@@ -46,12 +45,17 @@ input#menu-button + label {
   height: 50px;
   position: relative;
   cursor: pointer;
+  transition: all 0.35s;
   z-index: 31;
 }
+input#menu-button:hover + label {
+  background-color: #ffffff17;
+}
+
 input#menu-button + label span {
   display: block;
   position: absolute;
-  width: 50%;
+  width: 55%;
   height: 4px;
   left: 20%;
   /* transform: translateX(-50%); */
@@ -89,12 +93,32 @@ input#menu-button:checked + label span:nth-child(3) {
   background-color: white;
 }
 
+/* 사이드 컨텐츠 */
+
+.On-sidebar {
+}
+
+.On-sidebar a {
+  display: block;
+
+  padding: 20px; /* 원하는 여백 값으로 조절하세요 */
+  transition: background-color 0.15s ease; /* 트랜지션 효과 추가 */
+  color: white;
+  font-size: 150%;
+  font-style: initial;
+  top: 20%;
+}
+
+.On-sidebar a:hover {
+  background-color: #8a2222; /* 마우스 호버 시 배경색 변경 */
+}
+
 /* 홈 화면 */
 
 h1 {
   color: #ffffff;
   position: relative;
-  font-family: 'Righteous', serif;
+  font-family: "Righteous", serif;
   font-size: 30vmin;
   text-shadow: 0.02em 0.01em 0 #751d0c;
   z-index: 1;
