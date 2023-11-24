@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q&A with Dropdown Menu</title>
+    <link rel="stylesheet" href="QnA.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Q&A</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown" onclick="toggleDropdown()">
+        <a href="#problem">메뉴 <span class="arrow-down"></span></a>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="#general">일반 문제</a>
+          <a href="#coding">코딩 문제</a>
+          <a href="#popular">가장 인기있는 문제</a>
+          <a href="#etc">기타</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="general">
+      <h2>일반 문제</h2>
+      <div class="section-content">
+        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
+      </div>
+      <!-- 여기에 일반 문제에 대한 내용 추가 -->
+    </section>
+
+    <section id="coding">
+      <h2>코딩 문제</h2>
+      <div class="section-content">
+        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
+      </div>
+      <!-- 여기에 코딩 문제에 대한 내용 추가 -->
+    </section>
+
+    <div class="board">
+      <h2>가장 인기있는 문제</h2>
+      <div class="section-content">
+        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
+      </div>
+      <!-- 여기에 인기있는 문제 게시판에 대한 내용 추가 -->
+    </div>
+
+    <script>
+      function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        dropdownContent.style.display =
+          dropdownContent.style.display === "block" ? "none" : "block";
+        rotateArrow();
+      }
+
+      // 화살표 회전 효과
+      function rotateArrow() {
+        var arrow = document.querySelector(".arrow-down");
+        arrow.style.transform =
+          arrow.style.transform === "rotate(225deg) translate(-4px, -2px)"
+            ? "rotate(45deg) translate(0px, 0px)"
+            : "rotate(225deg) translate(-4px, -2px)";
+      }
+
+      // 화면의 다른 곳을 클릭하면 드롭다운이 닫히도록 설정
+      window.onclick = function (event) {
+        if (!event.target.closest(".dropdown")) {
+          var dropdownContent = document.getElementById("dropdownContent");
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+            rotateArrow();
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

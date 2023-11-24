@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
 * {
   margin: 0;
@@ -17,100 +18,118 @@ div.container {
 }
 nav {
   position: relative;
-  width: 0;
-  /* height: 100vh; */
-  /* background-color: red; */
 }
 
-/* 사이드 네비게이션 메뉴 버튼 */
+/* 사이드 내부 컨텐츠 */
 
-div.On-sidebar {
-  height: 100%;
-  position: fixed;
-  width: 300px;
-  top: 0;
-  left: -300px;
-  background-color: #520f01;
-  /* border: 1px solid #6d1807; */
-  z-index: 30;
-  transition: 0.35s;
-  text-align: center;
-}
-input#menu-button {
-  display: none;
-}
-input#menu-button + label {
-  display: block;
-  width: 50px;
-  height: 50px;
+.side-bar > ul {
   position: relative;
-  cursor: pointer;
-  transition: all 0.35s;
-  z-index: 31;
+  text-align: center;
+  margin-top: 50px;
 }
-input#menu-button:hover + label {
-  background-color: #ffffff17;
+.side-bar > ul > li:hover {
+  background-color: #621406;
 }
-
-input#menu-button + label span {
+.side-bar > ul > li > a {
   display: block;
-  position: absolute;
-  width: 55%;
-  height: 4px;
-  left: 20%;
-  /* transform: translateX(-50%); */
-  background-color: black;
-  transition: 0.35s;
-}
-input#menu-button:checked ~ div.On-sidebar {
-  left: 0;
-}
-input#menu-button + label span:nth-child(1) {
-  top: 30%;
-}
-input#menu-button + label span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-input#menu-button + label span:nth-child(3) {
-  bottom: 30%;
-}
-
-input#menu-button:checked + label span:nth-child(1) {
-  transform: rotate(225deg);
-  top: 50%;
-  background-color: white;
-}
-input#menu-button:checked + label span:nth-child(2) {
-  visibility: hidden;
-  transform: rotate(50deg) translateY(10%);
-  transition: 0.05s;
-  background-color: white;
-}
-input#menu-button:checked + label span:nth-child(3) {
-  transform: rotate(135deg) translateY(10%);
-  top: 50%;
-  background-color: white;
-}
-
-/* 사이드 컨텐츠 */
-
-.On-sidebar {
-}
-
-.On-sidebar a {
-  display: block;
-
-  padding: 20px; /* 원하는 여백 값으로 조절하세요 */
-  transition: background-color 0.15s ease; /* 트랜지션 효과 추가 */
   color: white;
-  font-size: 150%;
-  font-style: initial;
-  top: 20%;
+  font-size: 120%;
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 15px 0;
 }
 
-.On-sidebar a:hover {
-  background-color: #8a2222; /* 마우스 호버 시 배경색 변경 */
+/* 사이드 아이콘, 이동 애니메이션 */
+
+:root {
+  /* 사이드바 변수  */
+  --side-bar-width: 270px; /* 사이드바 너비 */
+  --side-bar-height: 90vh; /* 사이드바 높이 */
+  --side-bar-transiton: 0.45s; /* transition 시간 */
+}
+
+.side-bar {
+  position: fixed;
+  background-color: rgb(65, 0, 0);
+  width: var(--side-bar-width);
+  height: var(--side-bar-height);
+  margin: calc((100vh - var(--side-bar-height)) / 2) 0;
+  border-radius: 20px;
+  transform: translate(calc(var(--side-bar-width) * -0.8));
+  transition: all var(--side-bar-transiton);
+}
+.side-bar:hover {
+  /* 사이드바에 마우스 오버시 오른쪽으로 가져오기 */
+  transform: translate(-20px);
+}
+
+.side-bar__icon-box {
+  display: flex;
+  justify-content: flex-end;
+}
+.side-bar__icon {
+  position: relative;
+  width: 23px;
+  height: 17px;
+  margin: 15px;
+  margin-top: 20px;
+  transition: all var(--side-bar-transiton);
+}
+
+/* div (화살표 아이콘) */
+.side-bar__icon > div {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background-color: #ffffff;
+  transition: all var(--side-bar-transiton);
+}
+.side-bar__icon > div:nth-child(1) {
+  top: 0;
+  width: auto;
+  left: 0;
+  right: 0;
+  transition: all var(--side-bar-transiton),
+    height calc(var(--side-bar-transiton)) 0s,
+    left calc(var(--side-bar-transiton) / 2) calc(var(--side-bar-transiton) / 2),
+    right calc(var(--side-bar-transiton) / 2)
+      calc(var(--side-bar-transiton) / 2);
+}
+.side-bar__icon > div:nth-child(2) {
+  top: 40%;
+  transform-origin: left bottom;
+}
+.side-bar__icon > div:nth-child(3) {
+  top: 80%;
+  right: 0;
+  transform-origin: right bottom;
+}
+.side-bar:hover .side-bar__icon > div:nth-child(1) {
+  /* 1번째 막대기 변형 */
+  width: auto;
+  left: 40%;
+  right: 40%;
+  height: 100%;
+  transition: all var(--side-bar-transiton),
+    height calc(var(--side-bar-transiton) / 2)
+      calc(var(--side-bar-transiton) / 2),
+    left calc(var(--side-bar-transiton) / 2) 0s,
+    right calc(var(--side-bar-transiton) / 2) 0s;
+}
+.side-bar:hover .side-bar__icon > div:nth-child(2) {
+  /* 2번째 막대기 회전 */
+  transform: rotate(45deg);
+  width: 70%;
+}
+.side-bar:hover .side-bar__icon > div:nth-child(3) {
+  /* 3번째 막대기 회전, 위치 이동 */
+  transform: rotate(-45deg);
+  top: 40%;
+  width: 70%;
+}
+.side-bar:hover .side-bar__icon {
+  /* 아이콘 이동안되게 고정. 사이드바 움직인 만큼 움직인다. */
+  transform: translate(calc(var(--side-bar-width) * -0.8 + 20px));
 }
 
 /* 홈 화면 */
@@ -121,6 +140,8 @@ h1 {
   font-family: "Righteous", serif;
   font-size: 30vmin;
   text-shadow: 0.02em 0.01em 0 #751d0c;
+  cursor: pointer;
+  user-select: none;
   z-index: 1;
 }
 h1:after {

@@ -7,24 +7,29 @@
     <title>KW Cloud</title>
   </head>
   <body>
-    <nav>
-      <div>
-        <input type="checkbox" , id="menu-button" />
-        <label for="menu-button">
-          <span></span><span></span><span></span>
-        </label>
-        <div class="On-sidebar">
-          <div style="height: 50px"></div>
-          <a href="RoadMAP.html">로드맵</a>
-        </div>
-      </div>
+    <nav class="side-bar">
+      <section class="side-bar__icon-box">
+        <section class="side-bar__icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="Summary.html">강의 요약</a></li>
+        <li><a href="Tips.html">팁</a></li>
+        <li><a href="QnA.html">질문 게시판</a></li>
+        <li><a href="RoadMAP.html">로드맵</a></li>
+      </ul>
     </nav>
     <div class="Main">
       <!-- container에 새로운 스타일 추가 -->
       <div class="container">
         <span></span><span></span><span></span><span></span>
-        <h1 data-shadow="KCLOUD">KCLOUD</h1>
+        <h1 id="Main-h1" data-shadow="KCLOUD">KCLOUD</h1>
       </div>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>

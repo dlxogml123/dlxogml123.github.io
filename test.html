@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        /* size */
+        --sidebar-width: 270px;
+        --sidebar-height: 90vh;
+      }
+      * {
+        font-style: none;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        position: relative;
+      }
+      .sidebar {
+        width: var(--sidebar-width);
+        height: var(--sidebar-height);
+        position: fixed;
+        left: -200px;
+        margin: calc((100vh - var(--sidebar-height)) / 2) 0px;
+        translate: translate(0, -50%);
+        background-color: rgb(0, 0, 0);
+        transition-duration: 0.35s;
+        border-radius: 30px;
+      }
+      .sidebar:hover {
+        left: -70px;
+      }
+      .sidebar > ul {
+        margin-top: 60px;
+      }
+      .sidebar > ul > li {
+        padding: 10px;
+      }
+      .sidebar > ul > li > a {
+        display: block;
+        width: 80%;
+        /* background-color: white; */
+        color: whitesmoke;
+        text-align: center;
+        font-weight: bold;
+        font-size: 130%;
+        padding-left: 60px;
+      }
+      .sidebar > section {
+        position: relative;
+        /* left: 200px; */
+        width: 30px;
+        height: 30px;
+        /* padding: 5px; */
+        transform: translate(215px, 30px);
+        transition: 0.35s;
+      }
+      .sidebar:hover section {
+        transform: translate(85px, 30px);
+      }
+      .sidebar > section > span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 8%;
+        background-color: white;
+        transition: all 0.5s;
+      }
+      .sidebar > section > span:nth-child(1) {
+        width: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8%;
+        transition: all 0.5s, left 0.25s 0.25s, right 0.25s 0.25s,
+          height 0.25s 0s;
+      }
+      .sidebar > section > span:nth-child(2) {
+        top: 45%;
+        transform-origin: bottom left;
+      }
+      .sidebar > section > span:nth-child(3) {
+        top: 92%;
+        left: auto;
+        right: 0;
+        transform-origin: bottom right;
+      }
+      .sidebar:hover > section > span:nth-child(1) {
+        width: auto;
+        left: 46%;
+        right: 46%;
+        height: 97%;
+        transition: all 0.5s, left 0.25s 0s, right 0.25s 0s, height 0.25s 0.25s;
+      }
+      .sidebar:hover > section > span:nth-child(2) {
+        transform: rotate(45deg);
+        width: 70%;
+      }
+      .sidebar:hover > section > span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 45%;
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <div class="sidebar">
+        <section>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+        <ul>
+          <li><a href="#side1">Side1</a></li>
+          <li><a href="#side2">Side2</a></li>
+          <li><a href="#side3">Side3</a></li>
+          <li><a href="#side4">Side4</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
