@@ -1,79 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Q&A with Dropdown Menu</title>
-    <link rel="stylesheet" href="QnA.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="준서형.css" />
+    <title>KW Cloud</title>
   </head>
   <body>
-    <header>
-      <h1>Q&A</h1>
-    </header>
-
-    <nav>
-      <div class="dropdown" onclick="toggleDropdown()">
-        <a href="#problem">메뉴 <span class="arrow-down"></span></a>
-        <div class="dropdown-content" id="dropdownContent">
-          <a href="#general">일반 문제</a>
-          <a href="#coding">코딩 문제</a>
-          <a href="#popular">가장 인기있는 문제</a>
-          <a href="#etc">기타</a>
-        </div>
-      </div>
+    <nav class="side-bar">
+      <section class="side-bar__icon-box">
+        <section class="side-bar__icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="Summary.html">강의 요약</a></li>
+        <li><a href="Tips.html">팁</a></li>
+        <li><a href="QnA.html">질문 게시판</a></li>
+        <li><a href="RoadMAP.html">로드맵</a></li>
+      </ul>
     </nav>
+    <main class="main-container">
+      <div class="main__box">
+        <h1 class="main__h1">QnA Page</h1>
 
-    <section id="general">
-      <h2>일반 문제</h2>
-      <div class="section-content">
-        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
-      </div>
-      <!-- 여기에 일반 문제에 대한 내용 추가 -->
+        <nav class="menu">
+          <div class="dropdown" onclick="toggleDropdown()">
+          <a href="#menu" calss="menu">메뉴<span class="arrow-down" class ="menu"></span></a>
+            <div class="dropdown-content" id="dropdownContent"> 
+              <a href="일반 문제.html" onclick="showSection('general')">일반 문제</a>
+              <a href="코딩문제.html" onclick="showSection('coding')">코딩 문제</a>
+              <a href="가장 인기있는 문제.html" onclick="showSection('popular')">가장 인기있는 문제</a>
+              <a href="기타.html" onclick="showSection('etc')">기타</a>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="list">
+        <section id="general" class="grneral">  
+        <a href="일반 문제.html" class="section-link" onclick="showGeneralContent()">
+            일반 문제
+        </a>
+        <div class="section-content">
+            <img width="200" src="assets\image\스크린샷 2023-11-30 150120.png" alt="일반 문제" />
+        </div>
+        <!-- 여기에 일반 문제에 대한 내용 추가 -->
     </section>
 
-    <section id="coding">
-      <h2>코딩 문제</h2>
-      <div class="section-content">
-        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
-      </div>
-      <!-- 여기에 코딩 문제에 대한 내용 추가 -->
+    <section id="coding" class="coding">
+        <a href="코딩문제.html" class="section-link" onclick="showCodingContent()">
+            코딩 문제
+        </a>
+        <div class="section-content">
+            <img width="200" src="assets\image\다운로드.jpeg" alt="코딩 문제" />
+        </div>
+        <!-- 여기에 코딩 문제에 대한 내용 추가 -->
     </section>
 
-    <div class="board">
-      <h2>가장 인기있는 문제</h2>
-      <div class="section-content">
-        <img width="200" src="/assets/image/owl.jpg" alt="부엉이" />
+    <section id="popular" class="popular">
+      <a href="가장 인기있는 문제.html" class="section-link" onclick="showpopularContent()">
+            가장 인기있는 문제
+        </a>
+        <div class="section-content">
+        <img width="200" src="assets\image\다운로드.jpeg" alt="가장 인기 있는 문제" />
+        </div>
+        <!-- 여기에 인기있는 문제 게시판에 대한 내용 추가 -->
+    </section>
+
       </div>
-      <!-- 여기에 인기있는 문제 게시판에 대한 내용 추가 -->
-    </div>
+      
+        
 
-    <script>
-      function toggleDropdown() {
-        var dropdownContent = document.getElementById("dropdownContent");
-        dropdownContent.style.display =
-          dropdownContent.style.display === "block" ? "none" : "block";
-        rotateArrow();
-      }
-
-      // 화살표 회전 효과
-      function rotateArrow() {
-        var arrow = document.querySelector(".arrow-down");
-        arrow.style.transform =
-          arrow.style.transform === "rotate(225deg) translate(-4px, -2px)"
-            ? "rotate(45deg) translate(0px, 0px)"
-            : "rotate(225deg) translate(-4px, -2px)";
-      }
-
-      // 화면의 다른 곳을 클릭하면 드롭다운이 닫히도록 설정
-      window.onclick = function (event) {
-        if (!event.target.closest(".dropdown")) {
-          var dropdownContent = document.getElementById("dropdownContent");
-          if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-            rotateArrow();
-          }
-        }
-      };
-    </script>
+      </div>
+    </main>
   </body>
+
+  <script> function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.style.display =
+        dropdownContent.style.display === "block" ? "none" : "block";
+    rotateArrow();
+    }
+
+  // 화살표 회전 효과
+    function rotateArrow() {
+    var arrow = document.querySelector(".arrow-down");
+    arrow.style.transform =
+        arrow.style.transform === "rotate(225deg) translate(-4px, -2px)"
+        ? "rotate(45deg) translate(0px, 0px)"
+        : "rotate(225deg) translate(-4px, -2px)";
+    }
+
+  // 화면의 다른 곳을 클릭하면 드롭다운이 닫히도록 설정
+    window.onclick = function (event) {
+    if (!event.target.closest(".dropdown")) {
+        var dropdownContent = document.getElementById ("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        rotateArrow();
+        }
+    }
+}
+  </script>
 </html>
