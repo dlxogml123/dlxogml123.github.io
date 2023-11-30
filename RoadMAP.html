@@ -4,8 +4,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="Beta-style.css" />
   <title>KW Cloud</title>
+  <link rel="stylesheet" href="Beta-style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #751d0c;
+    }
+
+    .zoom-container2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .zoom-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .grade1 {
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 20px;
+      margin-right: 50px;
+      width: 250px;
+      height: 50px;
+      left: 27px;
+      background-color: #ffffffd6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      border-radius: 25px;
+      /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+      cursor: pointer;
+      font-weight: lighter;
+      overflow: hidden;
+    }
+
+    .grade1:hover {
+      color: white;
+      transform: scale(1.2);
+    }
+
+    .grade_2 {
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 20px;
+      margin-right: 50px;
+      width: 250px;
+      height: 50px;
+      background-color: #ffffffd6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+      /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+      cursor: pointer;
+      font-weight: lighter;
+      overflow: hidden;
+    }
+
+    .grade_2:hover {
+      color: white;
+      transform: scale(1.2);
+    }
+
+    .zoom-box2 {
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 50px;
+      width: 300px;
+      height: 150px;
+      background-color: #ffffffd6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+      font-size: 200%;
+      border-radius: 20px;
+      text-shadow: 0 16px 50px black;
+      font-weight: bold;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .zoom-box2:hover {
+      color: white;
+      transform: scale(1.5);
+    }
+
+    /* 팝업 스타일 */
+    .popup {
+      position: fixed;
+      width: 300px;
+      height: 65px;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 8px 30px rgba(0, 0, 0);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 999;
+      text-align: center;
+    }
+
+    .popup.active {
+      opacity: 1;
+    }
+
+    .popup a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    /* 하단 상자 애니메이션 */
+    .zoom-container.fade-in {
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .highlight {
+      background-color: rgb(0, 0, 0, 0.8);
+      color: white; /* 하이라이트 스타일 설정 */
+      box-shadow: 0 8px 30px rgba(0, 0, 0);
+    }
+  </style>
 </head>
 
 <body>
@@ -26,10 +171,165 @@
     </ul>
   </nav>
   <main class="main-container">
-    <div class="main__box">
-      <h1 class="main__h1">ROADMAP Page</h1>
+    <div class="zoom-container2">
+      <div class="zoom-box2" onclick="showSubBoxes('1학년')">
+        <p>1학년</p>
+      </div>
+      <div class="zoom-box2" onclick="showSubBoxes('2학년')">
+        <p>2학년</p>
+      </div>
+      <div class="zoom-box2" onclick="showSubBoxes('3학년')">
+        <p>3학년</p>
+      </div>
+      <div class="zoom-box2" onclick="showSubBoxes('4학년')">
+        <p>4학년</p>
+      </div>
     </div>
+
+    <div class="zoom-container" id="subBoxesContainer" style="display: none;">
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>컴퓨터공학 입문세미나</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>공학설계입문</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>대학물리학, 대학화학및실험</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>대학수학연습</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>c프로그래밍</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>컴퓨팅사고</p>
+      </div>
+      <div class="grade1" onclick="openPopup('https://example.com/')">
+        <p>고급 c프로그래밍</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>디지털 논리회로</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>컴퓨터공학기초 실험</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>회로이론</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>선형대수학</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>벡터해석학및연습</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>공학수학</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>데이터구조 설계</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>객체지향 프로그래밍설계, 실습</p>
+      </div>
+      <div class="grade_2" onclick="openPopup('https://example.com/')">
+        <p>이산수학</p>
+      </div>
+    </div>
+
+    <!-- 팝업 -->
+    <div class="popup" id="myPopup">
+      <p>팝업 내용이 여기에 들어갑니다. <a href="https://example.com" target="_blank">example.com으로 가기</a></p>
+      <p><a href="#" onclick="closePopup()">닫기</a></p>
+    </div>
+
+    <script>
+      function showSubBoxes(grade) {
+        var subBoxesContainer = document.getElementById('subBoxesContainer');
+        subBoxesContainer.innerHTML = ''; // 기존 내용 초기화
+
+        // 학년에 따라 다르게 보여줄 클래스들 추가
+        if (grade === '1학년') {
+          appendGradeBoxes([
+            '컴퓨터공학 입문세미나',
+            '공학설계입문',
+            '대학물리학, 대학화학및실험',
+            '대학수학연습',
+            'c프로그래밍',
+            '컴퓨팅사고',
+            '고급 c프로그래밍'
+          ]);
+        } else if (grade === '2학년') {
+          appendGradeBoxes([
+            '디지털 논리회로',
+            '컴퓨터공학기초 실험',
+            '회로이론',
+            '선형대수학',
+            '벡터해석학및연습',
+            '공학수학',
+            '데이터구조 설계',
+            '객체지향 프로그래밍설계, 실습',
+            '이산수학'
+          ]);
+        }
+        // 이하 학년에 따라 추가 가능
+
+        subBoxesContainer.style.display = 'flex';
+        subBoxesContainer.classList.remove('fade-in');
+        void subBoxesContainer.offsetWidth; // 리플로우 강제 발생
+        subBoxesContainer.classList.add('fade-in');
+      }
+
+      function appendGradeBoxes(classes) {
+        var subBoxesContainer = document.getElementById('subBoxesContainer');
+        classes.forEach(function (className) {
+          var box = document.createElement('div');
+          box.classList.add('grade1');
+          box.onclick = function () {
+            openPopup('https://example.com/');
+          };
+          box.innerHTML = '<p>' + className + '</p>';
+          subBoxesContainer.appendChild(box);
+        });
+      }
+
+      function openPopup(url) {
+        var popup = document.getElementById('myPopup');
+        popup.innerHTML = '<p><a href="' + url + '" target="_blank">"강의 요약본"으로 이동<br>"질문방"으로 이동</a></p><p><a href="#" onclick="closePopup()">닫기</a></p>';
+        popup.classList.add('active');
+      }
+
+      function closePopup() {
+        var popup = document.getElementById('myPopup');
+        popup.classList.remove('active');
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var zoomBoxes = document.querySelectorAll('.zoom-box2');
+
+        zoomBoxes.forEach(function (box) {
+          box.addEventListener('click', function () {
+            zoomBoxes.forEach(function (otherBox) {
+              otherBox.classList.remove('highlight');
+            });
+
+            box.classList.add('highlight');
+          });
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+            var grade1Boxes = document.querySelectorAll('.grade1');
+
+            grade1Boxes.forEach(function (box) {
+            box.addEventListener('click', function () {
+                grade1Boxes.forEach(function (otherBox) {
+                otherBox.classList.remove('highlight');
+                });
+
+                box.classList.add('highlight');
+            });
+            });
+        });
+    </script>
   </main>
 </body>
-
 </html>
