@@ -18,13 +18,13 @@
             height: 100vh;
         }
 
-        h3 {
+        h1 {
             color: #fff;
             margin-bottom: 20px;
             position: absolute;
             top: 0;
             right: 1;
-            font-size: 200%;
+            font-size: 300%;
         }
 
         #generalForm,
@@ -160,7 +160,7 @@
 </head>
 
 <body>
-    <h3>코딩 문제</h3>
+    <h1>코딩 문제</h1>
 
     <form id="generalForm">
         <label for="generalTitle" class="title">제목:</label>
@@ -340,7 +340,6 @@
                 commentsContainer.appendChild(commentItem);
             });
         }
-        
     }
 
 
@@ -420,16 +419,14 @@
             boardItemPreview.classList.add("board-item-preview");
             boardItemPreview.innerHTML = "<h3>" + post.title + "</h3>";
 
-              //클릭시 댓글 목록
-              boardItemPreview.addEventListener("click", function () {
-                  displayPostDetails(post, index);
-              });
+            //클릭시 댓글 목록
+            boardItemPreview.addEventListener("click", function () {
+                displayPostDetails(post, index);
+            });
 
-              board.appendChild(boardItemPreview);
-          });
+            board.appendChild(boardItemPreview);
+        });
     }
-
-    
 </script>
 
 </html>
