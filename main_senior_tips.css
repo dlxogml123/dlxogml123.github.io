@@ -49,8 +49,9 @@ div.home-container {
   margin-right: 120px;
   margin-top: 20px;
   list-style-type: none;
-  background-color: grey;
+  background-color: white;
   background-size: auto;
+  borderradius:10px;
 }
 .main__ul li:first-child {
   list-style-type: none;
