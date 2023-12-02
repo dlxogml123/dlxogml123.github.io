@@ -268,7 +268,7 @@ div.home-container:hover span:nth-child(4) {
     }
     .Competition .section-content img {
     margin-right: 100px; /* 조절 가능한 여백 값 */ 
-    max-width: 100%; /* 이미지 최대 너비 */
+    max-width: 70%; /* 이미지 최대 너비 */
     max-height: 100%; /* 이미지 최대 높이 */
     border-radius: 15%; /* 원형 이미지를 위한 경계 반지름 설정 */
     }
@@ -276,8 +276,7 @@ div.home-container:hover span:nth-child(4) {
     margin: 50px; /* 글씨의 상단 여백 제거 */
     
   .section-link {
-            font-size: 24px; /* 링크의 글자 크기 조절 */
-            color: #3498db; /* 링크의 색상 설정 */
+            font-size: 50px; /* 링크의 글자 크기 조절 */
             text-decoration: none; /* 링크의 밑줄 제거 */
             font-weight: bold; /* 링크의 글자를 굵게 표시 */
             display: block; /* 링크를 블록 수준 요소로 설정하여 너비를 최대로 확장 */
