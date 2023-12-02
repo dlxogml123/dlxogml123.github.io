@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
 * {
   margin: 0;
@@ -9,13 +9,6 @@
 body {
   height: 100%;
   background-color: #751d0c;
-}
-.body-header {
-  color: white;
-  font-size: 350%;
-  font-family: 'Righteous', serif;
-  margin-left: 100px;
-  height: 40px;
 }
 div.home {
   display: flex;
@@ -30,109 +23,13 @@ div.home-container {
   height: 100vh;
   margin-left: 10vw;
 }
-.my-button-1 {
-  background-image: url('/what_seniors_do/startup.jpg'); 
-  background-size: cover; 
-  width: 300px;
-  height: 300px; 
-  color: white; 
-  font-size: 16px; 
-  border: none;
-  cursor: pointer; 
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  /
-}
-.my-button-11 {
-  width: 50px; 
-  height: 30px; 
-  color: black; 
-  background-color: white;
-  font-size: 16px; 
-  border: black; 
-  cursor: pointer; 
-  position: absolute;
-  top: 60%;
-  left: 25%;
-  text-align: center;
-}
-.my-button-2 {
-  background-image: url('job.jpg'); 
-  background-size: cover; 
-  width: 300px; 
-  height: 300px; 
-  color: white; 
-  font-size: 16px;
-  border: none; 
-  cursor: pointer;
-  top: 15%;
-  right: 15%;
-}
-.my-button-22 {
-  width: 50px; 
-  height: 30px; 
-  color: black;
-  background-color: white;
-  font-size: 16px;
-  border: black; 
-  cursor: pointer; 
-  position: absolute;
-  top: 60%;
-  right: 25%;
-  text-align: center;
-}
-.my-button-3 {
-  background-image: url('gradschool.jpg'); 
-  background-size: cover;
-  width: 300px; 
-  height: 300px; 
-  color: white; 
-  font-size: 16px;
-  border: none; 
-  cursor: pointer;
-  top: 100%;
-  left: 15%;
-}
-.my-button-33 {
-  width: 50px; 
-  height: 30px; 
-  color: black; 
-  background-color: white;
-  font-size: 16px; 
-  border: black; 
-  cursor: pointer; 
-  position: absolute;
-  top: 120%;
-  left: 25%;
-  text-align: center;
-}
-.my-button-4 {
-  background-image: url('etc.jpg'); 
-  background-size: cover; 
-  width: 300px; 
-  height: 300px; 
-  color: white; 
-  font-size: 16px; 
-  border: none;
-  cursor: pointer; 
-  bottom: 15%;
-  right: 15%;
-}
-.my-button-44 {
-  width: 50px; 
-  height: 30px; 
-  color: black;
-  background-color: white;
-  font-size: 16px; 
-  border: black;
-  cursor: pointer; 
-  position: absolute;
-  top: 120%;
-  right: 25%;
-  text-align: center;
+.main__h1 {
+  color: white;
+  font-size: 300%;
+  font-family: "Righteous", serif;
 }
 
+/* 사이드 내부 컨텐츠 */
 
 .side-bar > ul {
   position: relative;
@@ -147,16 +44,17 @@ div.home-container {
   color: white;
   font-size: 120%;
   font-weight: bold;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   padding: 15px 0;
 }
 
-
+/* 사이드 아이콘, 이동 애니메이션 */
 
 :root {
-  --side-bar-width: 270px; 
-  --side-bar-height: 90vh; 
-  --side-bar-transiton: 0.45s; 
+  /* 사이드바 변수  */
+  --side-bar-width: 270px; /* 사이드바 너비 */
+  --side-bar-height: 90vh; /* 사이드바 높이 */
+  --side-bar-transiton: 0.45s; /* transition 시간 */
 }
 
 .side-bar {
@@ -171,6 +69,7 @@ div.home-container {
   z-index: 31;
 }
 .side-bar:hover {
+  /* 사이드바에 마우스 오버시 오른쪽으로 가져오기 */
   transform: translate(-20px);
 }
 
@@ -187,6 +86,7 @@ div.home-container {
   transition: all var(--side-bar-transiton);
 }
 
+/* div (화살표 아이콘) */
 .side-bar__icon > div {
   position: absolute;
   width: 100%;
@@ -215,6 +115,7 @@ div.home-container {
   transform-origin: right bottom;
 }
 .side-bar:hover .side-bar__icon > div:nth-child(1) {
+  /* 1번째 막대기 변형 */
   width: auto;
   left: 40%;
   right: 40%;
@@ -226,22 +127,27 @@ div.home-container {
     right calc(var(--side-bar-transiton) / 2) 0s;
 }
 .side-bar:hover .side-bar__icon > div:nth-child(2) {
+  /* 2번째 막대기 회전 */
   transform: rotate(45deg);
   width: 70%;
 }
 .side-bar:hover .side-bar__icon > div:nth-child(3) {
+  /* 3번째 막대기 회전, 위치 이동 */
   transform: rotate(-45deg);
   top: 40%;
   width: 70%;
 }
 .side-bar:hover .side-bar__icon {
+  /* 아이콘 이동안되게 고정. 사이드바 움직인 만큼 움직인다. */
   transform: translate(calc(var(--side-bar-width) * -0.8 + 20px));
 }
+
+/* 홈 화면 */
 
 h1.home__h1 {
   color: #ffffff;
   position: relative;
-  font-family: 'Righteous', serif;
+  font-family: "Righteous", serif;
   font-size: 30vmin;
   text-shadow: 0.02em 0.01em 0 #751d0c;
   cursor: pointer;
@@ -282,6 +188,7 @@ div.home-container {
   position: relative;
   width: auto;
   overflow: visible;
+  /* margin: 0 100vw; */
   padding: 0 3%;
   left: 50%;
   transform: translateX(-50%);
@@ -331,4 +238,53 @@ div.home-container:hover span:nth-child(3) {
 div.home-container:hover span:nth-child(4) {
   height: 100%;
   transition-delay: 1.05s;
+}
+ .Competition {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px; /* 전체 섹션을 오른쪽으로 이동 */
+}
+
+.Competition section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* 섹션을 세로로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.Competition section .section-content {
+    margin-top: 10px; /* 섹션 간격 조절 */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Competition a {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* 섹션을 세로로 정렬 */
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    margin-right: 50px; /* 링크를 오른쪽으로 이동 */
+}
+
+.Competition .section-content img {
+    max-width: 100%; /* 이미지 최대 너비 */
+    max-height: 100%; /* 이미지 최대 높이 */
+    border-radius: 15%; /* 원형 이미지를 위한 경계 반지름 설정 */
+    margin-right: 50px; /* 이미지를 오른쪽으로 이동 */
+}
+
+.Competition .section-content h2 {
+    margin: 50px; /* 글씨의 상단 여백 제거 */
+}
+
+.Competition .section-link {
+    font-size: 50px; /* 링크의 글자 크기 조절 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    font-weight: bold; /* 링크의 글자를 굵게 표시 */
+    display: block; /* 링크를 블록 수준 요소로 설정하여 너비를 최대로 확장 */
+    margin-bottom: 10px; /* 링크 아래 여백 설정 */
 }
