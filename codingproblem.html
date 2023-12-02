@@ -448,6 +448,26 @@
                 displayBoard();
             }
         });
+     function previewImage() {
+            var fileInput = document.getElementById("generalFile");
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // 이미지를 미리보기로 표시
+                    var preview = document.createElement("img");
+                    preview.src = e.target.result;
+                    preview.style.maxWidth = "100%";
+                    preview.style.height = "auto";
+                    document.getElementById("div").appendChild(preview);
+                };
+
+                // 파일을 읽어옴
+                reader.readAsDataURL(file);
+            }
+        }
     
 </script>
 
