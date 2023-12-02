@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>게시판</h1>
+    </header>
+
+    <section class="post-form">
+      <h2>글 작성</h2>
+      <form action="#" method="post">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" required />
+
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">게시글 작성</button>
+      </form>
+    </section>
+
+    <section class="post-list">
+      <h2>게시글 목록</h2>
+      <!-- 동적으로 생성되는 게시글 목록 -->
+    </section>
+
+    <footer>
+      <p>&copy; 2023 게시판</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업생 인증 페이지</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="verification-container">
+      <h2>졸업생 인증</h2>
+      <form id="verification-form" onsubmit="submitForm(event)">
+        <label for="studentID">학번:</label>
+        <input type="text" id="studentID" name="studentID" required />
+
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required />
+
+        <button type="submit">인증</button>
+      </form>
+      <p id="verification-result" class="result-message"></p>
+    </div>
+
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+
+        const studentID = document.getElementById('studentID').value;
+        const name = document.getElementById('name').value;
+        const resultMessage = document.getElementById('verification-result');
+
+        if (studentID.startsWith('2020') && name.toLowerCase() === '졸업생') {
+          resultMessage.textContent = '인증 성공!';
+          resultMessage.style.color = 'green';
+        } else {
+          resultMessage.textContent = '인증 실패. 올바른 정보를 입력하세요.';
+          resultMessage.style.color = 'red';
+        }
+      }
+    </script>
+  </body>
+</html>
