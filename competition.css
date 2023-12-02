@@ -239,7 +239,7 @@ div.home-container:hover span:nth-child(4) {
   height: 100%;
   transition-delay: 1.05s;
 }
-  Competition {
+ .Competition {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -265,6 +265,8 @@ div.home-container:hover span:nth-child(4) {
     display: flex;
     align-items: center;
     flex-direction: row; /* 섹션을 세로로 정렬 */
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    font-size:50px;
 }
 
 .Competition .section-content img {
