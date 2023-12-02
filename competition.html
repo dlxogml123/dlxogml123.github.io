@@ -61,31 +61,4 @@
       </div>
   </body>
 
-  <script> function toggleDropdown() {
-    var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.style.display =
-        dropdownContent.style.display === "block" ? "none" : "block";
-    rotateArrow();
-    }
-
-  // 화살표 회전 효과
-    function rotateArrow() {
-    var arrow = document.querySelector(".arrow-down");
-    arrow.style.transform =
-        arrow.style.transform === "rotate(225deg) translate(-4px, -2px)"
-        ? "rotate(45deg) translate(0px, 0px)"
-        : "rotate(225deg) translate(-4px, -2px)";
-    }
-
-  // 화면의 다른 곳을 클릭하면 드롭다운이 닫히도록 설정
-    window.onclick = function (event) {
-    if (!event.target.closest(".dropdown")) {
-        var dropdownContent = document.getElementById ("dropdownContent");
-        if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-        rotateArrow();
-        }
-    }
-}
-  </script>
 </html>
