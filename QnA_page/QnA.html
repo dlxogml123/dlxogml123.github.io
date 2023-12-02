@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="QnA.css" />
+    <link rel="stylesheet" href="QnA_pages/QnA.css" />
     <title>KW Cloud</title>
   </head>
   <body>
@@ -33,41 +33,41 @@
           <div class="dropdown" onclick="toggleDropdown()">
           <a href="#menu" calss="menu">메뉴<span class="arrow-down" class ="menu"></span></a>
             <div class="dropdown-content" id="dropdownContent"> 
-              <a href="generalproblem.html" onclick="showSection('general')">일반 문제</a>
-              <a href="codingproblem.html" onclick="showSection('coding')">코딩 문제</a>
-              <a href="가장 인기있는 문제.html" onclick="showSection('popular')">가장 인기있는 문제</a>
-              <a href="기타.html" onclick="showSection('etc')">기타</a>
+              <a href="QnA_pages/generalproblem.html" onclick="showSection('general')">일반 문제</a>
+              <a href="QnA_pages/codingproblem.html" onclick="showSection('coding')">코딩 문제</a>
+              <a href="QnA_pages/vest important problem.html" onclick="showSection('popular')">가장 인기있는 문제</a>
+              <a href="QnA_pages/기타.html" onclick="showSection('etc')">기타</a>
           </div>
         </div>
       </nav>
       
       <div class="list">
         <section id="general" class="grneral">  
-        <a href="generalproblem.html" class="section-link" onclick="showGeneralContent()">
+        <a href="QnA_pages/generalproblem.html" class="section-link" onclick="showGeneralContent()">
             일반 문제
         </a>
         <div class="section-content">
-            <img width="200" src="일반문제.jpeg" alt="일반 문제" />
+            <img width="200" src="images/general problem.jpeg" alt="일반 문제" />
         </div>
         <!-- 여기에 일반 문제에 대한 내용 추가 -->
     </section>
 
     <section id="coding" class="coding">
-        <a href="codingproblem.html" class="section-link" onclick="showCodingContent()">
+        <a href="QnA_pages/codingproblem.html" class="section-link" onclick="showCodingContent()">
             코딩 문제
         </a>
         <div class="section-content">
-            <img width="200" src="코딩문제.jpeg" alt="코딩 문제" />
+            <img width="200" src="images/coding problem.jpeg" alt="코딩 문제" />
         </div>
         <!-- 여기에 코딩 문제에 대한 내용 추가 -->
     </section>
 
     <section id="popular" class="popular">
-      <a href="가장 인기있는 문제.html" class="section-link" onclick="showpopularContent()">
+      <a href="QnA_pages/vest important problem.html" class="section-link" onclick="showpopularContent()">
             가장 인기있는 문제
         </a>
         <div class="section-content">
-        <img width="200" src="백준 코딩문제.png" alt="가장 인기 있는 문제" />
+        <img width="200" src="images/baekjoon coding problem.png" alt="가장 인기 있는 문제" />
         </div>
         <!-- 여기에 인기있는 문제 게시판에 대한 내용 추가 -->
     </section>
