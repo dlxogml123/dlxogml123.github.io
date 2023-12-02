@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>친구 구인인</title>
+
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      background-color: #751d0c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+        
+
+        .board {
+            display: flex;
+        }
+
+        .form-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .post-list {
+            flex: 1;
+        }
+
+        .post-item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        form{
+          color:black;
+        }
+        h1 {
+      color: #fff;
+      margin-bottom: 20px;
+      position: absolute;
+      top: 0;
+      right: 1;
+      font-size: 300%;
+    }
+    label {
+
+      margin-bottom: 50px;
+      font-weight: bold; /* 진하게 만들기 */
+    }
+    input, textarea {
+      width: 100%;
+      padding: 80px;
+      margin-bottom: 1px;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 20px; /* 크기 조절 */
+    }
+    #title {
+  padding: 8px; /* 세로 크기 조절 */
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  font-weight: bold; /* 진하게 만들기 */
+  font-weight: bold;
+  font-size: 25px; /* 크기 조절 */
+}
+button {
+      background-color: #751d0c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: bold; /* 진하게 만들기 */
+    }
+    </style>
+</head>
+<body>
+<form>
+  <h1>new1</h1>
+
+  <div class="board">
+    <!-- 입력 폼 -->
+    <div class="form-container">
+        <h2>게시물 작성</h2>
+        <form id="postForm">
+            <label for="title">제목:</label>
+            <input type="text" id="title" class="form-input" required>
+
+            <label for="content">내용:</label>
+            <textarea id="content" class="form-input" rows="4" required></textarea>
+
+            <label for="file">파일 첨부:</label>
+            <input type="file" id="file" class="form-input">
+
+            <div class="button-container">
+                <button type="button" onclick="savePost()">저장</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 저장된 게시물 목록 -->
+    <div class="post-list">
+        <h2>게시물 목록</h2>
+        <div id="postList"></div>
+    </div>
+</div>
+</form>
+
+
+<script>
+    function savePost() {
+        // 폼 데이터 수집
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        const file = document.getElementById('file').value;
+
+        // 저장된 게시물 목록에 추가
+        const postListContainer = document.getElementById('postList');
+        const postItem = document.createElement('div');
+        postItem.className = 'post-item';
+        postItem.innerHTML = `
+            <h3>${title}</h3>
+            <p>${content}</p>
+            <p>첨부 파일: ${file || '없음'}</p>
+        `;
+        postListContainer.appendChild(postItem);
+
+        // 입력 폼 초기화
+        document.getElementById('postForm').reset();
+    }
+</script>
+
+</body>
+</html>
