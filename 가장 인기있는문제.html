@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가장 인기있는 문제</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #751d0c;
+        }
+        #v_problem{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      form {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold; /* 진하게 만들기 */
+      }
+  
+      input, textarea, button, #generalFile {
+        width: 100%;
+        padding: 80px;
+        margin-bottom: 1px;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: 20px; /* 크기 조절 */
+      }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        header {
+            background-color: #751d0c; /* 예시로 파란색 배경 */
+            color: #ffffff; /* 글자색은 흰색 */
+            padding: 10px;
+            text-align: right;
+            font-size: 90%;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            overflow: auto; /* 스크롤이 필요할 경우 추가 */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>가장 인기있는 문제</h1>
+        </header>
+        <hr>
+        <main>
+          <form id="v_problem">
+            <div>
+                <label for="title">제목:</label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div>
+                <label for="content">내용:</label>
+                <textarea id="content" name="content" rows="4"></textarea>
+            </div>
+
+            <div>
+                <label for="attachment">첨부파일:</label>
+                <input type="file" id="attachment" name="attachment">
+            </div>
+        </main>
+          </form>
+            
+    </div>
+</body>
+</html>
