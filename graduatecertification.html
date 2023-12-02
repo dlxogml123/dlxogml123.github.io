@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업생 인증 페이지</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <style>
+        body {
+            background-color: #751d0c; /* 바탕색을 빨간색으로 설정 */
+            margin: 0; /* body의 기본 margin 제거 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 뷰포트의 100% 높이를 차지하도록 설정 */
+        }
+
+        .verification-container {
+            background-color: white; /* 인증 컨테이너의 배경색을 흰색으로 설정 */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center; /* 텍스트 가운데 정렬 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #751d0c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #verification-result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
     <div class="verification-container">
-      <h2>졸업생 인증</h2>
-      <form id="verification-form" onsubmit="submitForm(event)">
-        <label for="studentID">학번:</label>
-        <input type="text" id="studentID" name="studentID" required />
+        <h2>졸업생 인증</h2>
+        <form id="verification-form" onsubmit="submitForm(event)">
+            <label for="studentID">학번:</label>
+            <input type="text" id="studentID" name="studentID" required />
 
-        <label for="name">이름:</label>
-        <input type="text" id="name" name="name" required />
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required />
 
-        <button type="submit">인증</button>
-      </form>
-      <p id="verification-result" class="result-message"></p>
+            <button type="submit">인증</button>
+        </form>
+        <p id="verification-result" class="result-message"></p>
     </div>
 
     <script>
-      function submitForm(event) {
-        event.preventDefault();
+        function submitForm(event) {
+            event.preventDefault();
 
-        const studentID = document.getElementById('studentID').value;
-        const name = document.getElementById('name').value;
-        const resultMessage = document.getElementById('verification-result');
+            const studentID = document.getElementById('studentID').value;
+            const name = document.getElementById('name').value;
+            const resultMessage = document.getElementById('verification-result');
 
-        if (studentID.startsWith('2020') && name.toLowerCase() === '졸업생') {
-          resultMessage.textContent = '인증 성공!';
-          resultMessage.style.color = 'green';
-        } else {
-          resultMessage.textContent = '인증 실패. 올바른 정보를 입력하세요.';
-          resultMessage.style.color = 'red';
+            if (studentID.startsWith('2020') && name.toLowerCase() === '졸업생') {
+                resultMessage.textContent = '인증 성공!';
+                resultMessage.style.color = 'green';
+            } else {
+                resultMessage.textContent = '인증 실패. 올바른 정보를 입력하세요.';
+                resultMessage.style.color = 'red';
+            }
         }
-      }
     </script>
-  </body>
+</body>
 </html>
