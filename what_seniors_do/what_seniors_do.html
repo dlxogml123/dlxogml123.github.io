@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="what_seniors_do.css" />
-    <title>what_seniors_do</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="what_i_need_to_do.css".css />
+    <link rel="icon" type="image/png" href="/assets/favicon.ico/favicon-32x32.png" />
+    <title>KW Cloud</title>
   </head>
   <body>
-    <header>
-      <h1 class="body-header">Where are you, SENIORS?</h1>
-    </header>
     <nav class="side-bar">
       <section class="side-bar__icon-box">
         <section class="side-bar__icon">
@@ -26,17 +27,39 @@
         <li><a href="RoadMAP.html">로드맵</a></li>
       </ul>
     </nav>
-    <main class="main-container">
-      <div class="main__box">
-        <a href="startup.html" class="my-button-1"><img src="../images/startup.png" alt="창업"></a>
-        <a href="startup.html" class="my-button-11">창업</a>
-        <a href="employment.html" class="my-button-2"><img src="../images/employment.png" alt="취직"></a>
-        <a href="employment.html" class="my-button-22">취직</a>
-        <a href="gradschool.html" class="my-button-3"><img src="../images/gradschool.png" alt="대학원"></a>
-        <a href="gradschool.html" class="my-button-33">대학원</a>
-        <a href="etc.html" class="my-button-4"><img src="../images/etc.png" alt="기타"></a>
-        <a href="etc.html" class="my-button-44">기타</a>
-      </div>
-    </main>
+
+    <div class="Competition">
+      <section id="Competition" class="Competition">
+        <a href="schoolstudy.html" class="section-link" onclick="showGeneralContent()"> 창업 </a>
+        <div class="section-content">
+          <img width="200" src="../images/startup.png" alt="창업 관련" style="width: 400px" />
+        </div>
+        <!-- 여기에 대회에 대한 내용 추가 -->
+      </section>
+
+      <section id="exhivbt" class="exhivbt">
+        <a href="personalstudy.html" class="section-link" onclick="showCodingContent()"> 취직 </a>
+        <div class="section-content">
+          <img width="200" src="../images/employment.png" alt="취직 관련" style="width: 400px" />
+        </div>
+        <!-- 여기에 공모전에 대한 내용 추가 -->
+      </section>
+
+      <section id="etc" class="etc">
+        <a href="group.html" class="section-link" onclick="showpopularContent()">대학원</a>
+        <div class="section-content">
+          <img width="200" src="../images/gradschool.png" alt="대학원 관련" style="width: 400px" />
+        </div>
+        <!-- 여기에 기타에대한 내용 추가 -->
+      </section>
+      
+      <section id="etc" class="etc">
+        <a href="group.html" class="section-link" onclick="showpopularContent()">기타</a>
+        <div class="section-content">
+          <img width="200" src="../images/etc.png" alt="기타" style="width: 400px" />
+        </div>
+        <!-- 여기에 기타에대한 내용 추가 -->
+      </section>
+    </div>
   </body>
 </html>
