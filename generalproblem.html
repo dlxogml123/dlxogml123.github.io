@@ -17,7 +17,6 @@
             justify-content: center;
             height: 100vh;
         }
-
         h1 {
     color: #fff;
     margin-bottom: 10px;
@@ -25,7 +24,7 @@
     position: absolute;
     top: 10px; /* 예시 값, 필요에 따라 조절 */
     right: 5px; /* 예시 값, 필요에 따라 조절 */
-    font-size: 300%;
+    font-size: 200%;
 }
 
         #generalForm,
@@ -184,6 +183,8 @@
             <label for="commentInput">댓글:</label>
             <input type="text" id="commentInput" name="commentInput" />
             <button type="button" onclick="saveComment(currentPostIndex)">댓글 저장</button>
+             <button type="button" onclick="deleteComment(currentPostIndex)">댓글 삭제</button>
+        <div id="comments">
             <div id="comments"></div>
         </div>
     </div>
@@ -307,6 +308,18 @@
         };
 
         popupContent.appendChild(closeButton);
+
+            // 댓글목록 버튼
+        var commentButton = document.createElement("button");
+        commentButton.innerText = "댓글 목록";
+        commentButton.onclick = function () {
+            var newPageURL = "댓글 목록.html";
+            // 새로운 페이지로 이동
+    window.location.href = newPageURL;
+        };
+
+        popupContent.appendChild(commentButton);
+
 
         // 팝업 열기
         popupOverlay.style.display = "flex";
