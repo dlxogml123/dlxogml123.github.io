@@ -10,6 +10,13 @@ body {
   height: 100%;
   background-color: #751d0c;
 }
+.body-header {
+  color: white;
+  font-size: 350%;
+  font-family: 'Righteous', serif;
+  margin-left: 100px;
+  height: 40px;
+}
 .my-button {
   display: flex;
   justify-content: space-around;
