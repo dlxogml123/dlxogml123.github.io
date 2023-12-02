@@ -51,7 +51,7 @@ div.home-container {
   list-style-type: none;
   background-color: white;
   background-size: auto;
-  borderradius:10px;
+  border-radius:10px;
 }
 .main__ul li:first-child {
   list-style-type: none;
