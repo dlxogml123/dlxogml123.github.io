@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #751d0c;
+  }
+
+  .main-container {
+       margin-left: 100px; /* Adjust the left margin to shift everything to the right */
+  }
+
+  .zoom-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .zoom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .grade1 {
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    width: 250px;
+    height: 50px;
+    left: 27px;
+    background-color: #ffffffd6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    border-radius: 25px;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+    cursor: pointer;
+    font-weight: lighter;
+    overflow: hidden;
+  }
+
+  .grade1:hover {
+    color: white;
+    transform: scale(1.2);
+  }
+
+  .grade_2 {
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    width: 250px;
+    height: 50px;
+    background-color: #ffffffd6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+    cursor: pointer;
+    font-weight: lighter;
+    overflow: hidden;
+  }
+
+  .grade_2:hover {
+    color: white;
+    transform: scale(1.2);
+  }
+
+  .grade_3 {
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    width: 250px;
+    height: 50px;
+    background-color: #ffffffd6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+    cursor: pointer;
+    font-weight: lighter;
+    overflow: hidden;
+  }
+
+  .grade_3:hover {
+    color: white;
+    transform: scale(1.2);
+  }
+
+  .zoom-box2 {
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 150px;
+    background-color: #ffffffd6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0); */
+    font-size: 200%;
+    border-radius: 20px;
+    text-shadow: 0 16px 50px black;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .zoom-box2:hover {
+    color: white;
+    transform: scale(1.5);
+  }
+
+  /* 팝업 스타일 */
+  .popup {
+    position: fixed;
+    width: 300px;
+    height: 65px;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 30px rgba(0, 0, 0);
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 999;
+    text-align: center;
+  }
+
+  .popup.active {
+    opacity: 1;
+  }
+
+  .popup a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  /* 하단 상자 애니메이션 */
+  .zoom-container.fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .highlight {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white; /* 하이라이트 스타일 설정 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0);
+  }
