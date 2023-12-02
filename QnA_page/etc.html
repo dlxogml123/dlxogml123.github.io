@@ -27,8 +27,7 @@
     font-size: 200%;
 }
 
-        #generalForm,
-        #board {
+        #generalForm,#board {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -183,7 +182,7 @@
             <label for="commentInput">댓글:</label>
             <input type="text" id="commentInput" name="commentInput" />
             <button type="button" onclick="saveComment(currentPostIndex)">댓글 저장</button>
-             <button type="button" onclick="deleteComment(currentPostIndex)">댓글 삭제</button>
+            <button type="button" onclick="deleteComment(currentPostIndex)">댓글 삭제</button>
         <div id="comments">
             <div id="comments"></div>
         </div>
@@ -238,14 +237,6 @@
             boardItem.classList.add("board-item");
             boardItem.innerHTML = "<h3>" + post.title + "</h3><p>" + post.content + "</p><p>File: " + post.file + "</p>";
 
-            // 삭제 버튼 추가
-            var deleteButton = document.createElement("button");
-            deleteButton.innerText = "삭제";
-            deleteButton.onclick = function () {
-                deleteContent(post, index);
-            };
-            boardItem.appendChild(deleteButton);
-            board.appendChild(boardItem);
         });
     }
 
@@ -306,10 +297,10 @@
         closeButton.onclick = function () {
             closePostDetails();
         };
-
+    
         popupContent.appendChild(closeButton);
 
-            // 댓글목록 버튼
+        // 댓글목록 버튼
         var commentButton = document.createElement("button");
         commentButton.innerText = "댓글 목록";
         commentButton.onclick = function () {
@@ -319,7 +310,6 @@
         };
 
         popupContent.appendChild(commentButton);
-
 
         // 팝업 열기
         popupOverlay.style.display = "flex";
@@ -356,46 +346,6 @@
         }
         
     }
-
-
-
-    function saveComment(index) {
-        var commentInput = document.getElementById("commentInput");
-        var commentText = commentInput.value;
-
-        if (!commentText) {
-            alert("댓글을 입력하세요.");
-            return;
-        }
-
-        // 선택된 포스트에 댓글 추가
-        posts[index].comments = posts[index].comments || [];
-        posts[index].comments.push(commentText);
-
-        // 로컬 스토리지에 데이터 저장
-        localStorage.setItem("posts", JSON.stringify(posts));
-
-        // 댓글 저장 후 다시 댓글 섹션 갱신
-        displayPostDetails(posts[index], index);
-
-        // 댓글 입력 필드 초기화
-        commentInput.value = "";
-    }
-
-    function deleteComment(postIndex, comment) {
-        // 댓글 삭제
-        var commentIndex = posts[postIndex].comments.indexOf(comment);
-        if (commentIndex !== -1) {
-            posts[postIndex].comments.splice(commentIndex, 1);
-        }
-
-        // 로컬 스토리지에 데이터 저장
-        localStorage.setItem("posts", JSON.stringify(posts));
-
-        // 댓글 삭제 후 다시 댓글 섹션 갱신
-        displayPostDetails(posts[postIndex], postIndex);
-    }
-
     // 이미지 파일인지 확인하는 함수
     function isImageFile(filename) {
         return /\.(gif|jpe?g|png|webp)$/i.test(filename);
@@ -435,19 +385,14 @@
             boardItemPreview.innerHTML = "<h3>" + post.title + "</h3>";
 
               //클릭시 댓글 목록
-              boardItemPreview.addEventListener("click", function () {
-                  displayPostDetails(post, index);
-              });
+            boardItemPreview.addEventListener("click", function () {
+                displayPostDetails(post, index);
+            });
 
-              board.appendChild(boardItemPreview);
-          });
-    }
- window.addEventListener('storage', function (e) {
-            if (e.key === 'posts') {
-                // 'posts' 키가 변경되면 데이터를 다시로드하고 표시를 업데이트합니다.
-                displayBoard();
-            }
+            board.appendChild(boardItemPreview);
         });
+    }
+
     
 </script>
 
