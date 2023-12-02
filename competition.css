@@ -243,6 +243,7 @@ div.home-container:hover span:nth-child(4) {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-right: 20px; /* 전체 섹션을 오른쪽으로 이동 */
 }
 
 .Competition section {
@@ -266,14 +267,14 @@ div.home-container:hover span:nth-child(4) {
     align-items: center;
     flex-direction: row; /* 섹션을 세로로 정렬 */
     justify-content: flex-end; /* 오른쪽으로 정렬 */
-    font-size:50px;
+    margin-right: 20px; /* 링크를 오른쪽으로 이동 */
 }
 
 .Competition .section-content img {
-    margin-right: 70px; /* 조절 가능한 여백 값 */
     max-width: 100%; /* 이미지 최대 너비 */
     max-height: 100%; /* 이미지 최대 높이 */
     border-radius: 15%; /* 원형 이미지를 위한 경계 반지름 설정 */
+    margin-right: 20px; /* 이미지를 오른쪽으로 이동 */
 }
 
 .Competition .section-content h2 {
