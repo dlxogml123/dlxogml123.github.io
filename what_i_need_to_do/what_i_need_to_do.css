@@ -23,6 +23,12 @@ div.home {
 div.home-container {
   top: 150px;
 }
+.main-header {
+  color: white;
+  font-size: 200%;
+  font-family: 'Righteous', serif;
+  margin-left: 150px;
+}
 .main-container {
   display: block;
   position: relative;
@@ -31,9 +37,65 @@ div.home-container {
   margin-left: 10vw;
 }
 .main__h1 {
-  color: white;
-  font-size: 300%;
-  font-family: 'Righteous', serif;
+}
+.main__h2 {
+  color: black;
+  font-size: 100%;
+}
+.main__ul {
+  display: inline-block;
+  color: black;
+  font-size: 100%;
+  margin-right: 120px;
+  margin-top: 20px;
+  list-style-type: none;
+  background-color: grey;
+  background-size: auto;
+}
+.main__ul li:first-child {
+  list-style-type: none;
+}
+.main__ul li:not(:first-child) {
+  list-style-type: square;
+}
+.my-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 150px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-right: 120px;
+}
+.my-button-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 150px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: blue;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-right: 120px;
+}
+.my-button:hover {
+  background-color: grey;
 }
 
 .side-bar > ul {
