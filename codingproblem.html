@@ -265,14 +265,24 @@
         var file = post.file;
         var fileExtension = file.split('.').pop().toLowerCase();
 
-        if (fileExtension === "jpg" || fileExtension === "jpeg" || fileExtension === "png" || fileExtension === "gif") {
-            // 이미지인 경우 미리보기로 표시
-            var imageElement = document.createElement("img");
-            imageElement.src = file;
-            imageElement.alt = "미리보기";
-            imageElement.style.maxWidth = "100%";
-            imageElement.style.height = "auto";
-            imagePreview.appendChild(imageElement);
+       if (fileExtension === "jpg" || fileExtension === "jpeg" || fileExtension === "png" || fileExtension === "gif") {
+    // 이미지인 경우 미리보기로 표시
+    var imageElement = document.createElement("img");
+
+    // 파일 데이터를 사용하여 이미지 요소를 생성
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        imageElement.src = e.target.result;
+        imageElement.alt = "미리보기";
+        imageElement.style.maxWidth = "100%";
+        imageElement.style.height = "auto";
+        imagePreview.appendChild(imageElement);
+    };
+
+    // 파일을 읽어옴
+    reader.readAsDataURL(file);
+}
+
 
             // 이미지 파일이면 다운로드 링크 제공
             var downloadLink = document.createElement("a");
@@ -447,28 +457,7 @@
                 // 'posts' 키가 변경되면 데이터를 다시로드하고 표시를 업데이트합니다.
                 displayBoard();
             }
-        });
-     function previewImage() {
-            var fileInput = document.getElementById("generalFile");
-            var file = fileInput.files[0];
-
-            if (file) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    // 이미지를 미리보기로 표시
-                    var preview = document.createElement("img");
-                    preview.src = e.target.result;
-                    preview.style.maxWidth = "100%";
-                    preview.style.height = "auto";
-                    document.getElementById("div").appendChild(preview);
-                };
-
-                // 파일을 읽어옴
-                reader.readAsDataURL(file);
-            }
-        }
-    
+        });    
 </script>
 
 </html>
