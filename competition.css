@@ -299,13 +299,13 @@ nav.menu {
       box-shadow: none; /* 그림자 없애기 */
   }
 
-  .list{
+  .Competition{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-  .list section {
+  .Competition section {
     padding: 10px;
     display: flex;
       flex-direction: column; /* 섹션을 세로로 정렬 */
@@ -314,24 +314,24 @@ nav.menu {
       margin: 10px; /* 간격 조절 */
     }
 
-    .list section .section-content {
+    .Competition section .section-content {
         margin-top: 10px; /* 섹션 간격 조절 */
         display: flex;
     flex-direction: column;
     gap:10px;
       }
-    div.list a {
+    div.Competition a {
       color: white;
       display: flex;
       align-items: center;
       flex-direction: row; /* 섹션을 세로로 정렬 */
     }
-    .list .section-content img {
+    .Competition .section-content img {
     margin-right: 100px; /* 조절 가능한 여백 값 */ 
     max-width: 100%; /* 이미지 최대 너비 */
     max-height: 100%; /* 이미지 최대 높이 */
     border-radius: 15%; /* 원형 이미지를 위한 경계 반지름 설정 */
     }
-    .section-content.list h2 {
+    .section-content.Competition h2 {
     margin: 10px; /* 글씨의 상단 여백 제거 */
     }
