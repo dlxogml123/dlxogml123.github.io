@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>코딩딩 문제</title>
+    <title>코딩 문제</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Righteous);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
@@ -129,7 +129,40 @@
             background: #fff;
             padding: 100px;
             border-radius: 10px;
-           딩 문제</h1>
+            max-width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            box-sizing: border-box;
+            /* 박스 모델을 기본 값으로 변경 */
+        }
+
+        .popup-inner {
+            padding: 30px;
+            /* 내부의 요소들에 패딩을 주어 패딩 크기에 맞게 조절 */
+            box-sizing: border-box;
+            /* 박스 모델을 기본 값으로 변경 */
+        }
+
+        .board-item-details {
+            display: none;
+        }
+
+        .board-item-details.active {
+            display: block;
+        }
+
+        .commentSction {
+            top: 50%;
+            left: 50%;
+        }
+        #div {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>coding 문제</h1>
 
     <form id="generalForm">
         <label for="generalTitle" class="title">제목:</label>
