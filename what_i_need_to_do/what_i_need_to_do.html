@@ -27,7 +27,68 @@
       </ul>
     </nav>
     <main class="main-container">
-      <div class="main__box"></div>
+      <div class="main__box">
+        <a href="schoolstudy.html" class="my-button">학교 공부 관련</a>
+        <a href="personalstudy.html" class="my-button">학교 공부 외</a>
+        <a href="group.html" class="my-button">동아리 및 소모임</a>
+      </div>
     </main>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="what_i_need_to_do.css".css" />
+    <link rel="icon" type="image/png" href="/assets/favicon.ico/favicon-32x32.png" />
+    <title>KW Cloud</title>
+  </head>
+  <body>
+    <nav class="side-bar">
+      <section class="side-bar__icon-box">
+        <section class="side-bar__icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="Summary.html">강의 요약</a></li>
+        <li><a href="Tips.html">팁</a></li>
+        <li><a href="QnA.html">질문 게시판</a></li>
+        <li><a href="RoadMAP.html">로드맵</a></li>
+      </ul>
+    </nav>
+
+    <div class="Competition">
+      <section id="Competition" class="Competition">
+        <a href="schoolstudy.html" class="section-link" onclick="showGeneralContent()"> 학교 공부 관련 </a>
+        <div class="section-content">
+          <img width="200" src="images/schoolstudy.png" alt="학교 공부 관련" style="width: 400px" />
+        </div>
+        <!-- 여기에 대회에 대한 내용 추가 -->
+      </section>
+
+      <section id="exhivbt" class="exhivbt">
+        <a href="personalstudy.html" class="section-link" onclick="showCodingContent()"> 학교 공부 외 </a>
+        <div class="section-content">
+          <img width="200" src="images/personalstudy.png" alt="학교 공부 외" style="width: 400px" />
+        </div>
+        <!-- 여기에 공모전에 대한 내용 추가 -->
+      </section>
+
+      <section id="etc" class="etc">
+        <a href="group.html" class="section-link" onclick="showpopularContent()">동아리 및 소모임</a>
+        <div class="section-content">
+          <img width="200" src="images/miniclub.png" alt="동아리 및 소모임" style="width: 400px" />
+        </div>
+        <!-- 여기에 기타에대한 내용 추가 -->
+      </section>
+    </div>
   </body>
 </html>
