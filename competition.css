@@ -243,7 +243,7 @@ div.home-container:hover span:nth-child(4) {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 70px; /* 전체 섹션을 오른쪽으로 이동 */
+    margin-right: 50px; /* 전체 섹션을 오른쪽으로 이동 */
 }
 
 .Competition section {
